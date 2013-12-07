@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# Copies the resulting files to this location
+# Path to d2j-dex2jar.sh
+D2J_PATH=/home/alex/bin/
+# Location of your platform's android.jar
 DESTINATION=/opt/android-studio/sdk/platforms/android-19
 # The root, where your framework.jar and framework2.jar are located
 FRAMEWORK_ROOT=/home/alex/android/out/target/product/jfltexx/system/framework
@@ -29,6 +31,15 @@ fi
 
 #=================================================================================================
 
+echo ""
+echo "[!] WARNING [!]"
+echo "This requires d2j-dex2jar.sh to be in your path!"
+echo "https://code.google.com/p/dex2jar/downloads/"
+echo "Download it and extract it to any folder and edit D2J_PATH in this script"
+echo ""
+echo "Also \"zipmerge\" is required, install it if it isn't!"
+echo ""
+export PATH=${PATH}:$D2J_PATH
 echo ""
 echo "$(tput setaf 2)=====> Cleaning up$(tput setaf 1)"
 echo ""
